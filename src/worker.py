@@ -1,11 +1,6 @@
-from flask import Flask
+from workers import WorkerEntrypoint, Response
 
-app = Flask(__name__)
 
-@app.route("/")
-def home():
-    return "Edixex Domains çalışıyor!"
-
-@app.route("/health")
-def health():
-    return "OK"
+class Default(WorkerEntrypoint):
+    async def fetch(self, request):
+        return Response("Edixex Domains çalışıyor!")
