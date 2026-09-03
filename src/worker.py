@@ -1,6 +1,14 @@
-from workers import WorkerEntrypoint, Response
+from flask import Flask
+from workers import wsgi
 
+app = Flask(__name__)
 
-class Default(WorkerEntrypoint):
-    async def fetch(self, request):
-        return Response("Edixex Domains çalışıyor!")
+@app.get("/")
+def index():
+    return {"message": "Edixex Domains çalışıyor!"}
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+Default = wsgi.entrypoint(app)
