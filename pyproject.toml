@@ -2,7 +2,7 @@
 name = "edixex-domains"
 version = "1.0.0"
 description = "Edixex Domains"
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 dependencies = [
     "flask",
 ]
