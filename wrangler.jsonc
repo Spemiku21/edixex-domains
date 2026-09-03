@@ -1,0 +1,6 @@
+{
+  "name": "edixex-domains",
+  "main": "src/worker.py",
+  "compatibility_date": "2026-09-03",
+  "compatibility_flags": ["python_workers"]
+}
